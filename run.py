@@ -55,4 +55,31 @@ def validate_input(values):
     return True    
 
 
+def update_worksheet(data):
+    """
+    Updates worksheet adding new data
+    """
+    print("Updating sales sheet... \n")
+    sales_worksheet = SHEET.worksheet('sales')
+    sales_worksheet.append_row(data)
+    print("Update successfull.\n")
+
+
+def sales_total(value):
+    """
+    Returns todays total sales to the user & appends to worksheet
+    """
+    total = sum(value)
+    print(f"Total sales: {total} \n")
+    sales_worksheet = SHEET.worksheet('sales')
+    column = 4
+    last_row = len(sales_worksheet.get_all_values())
+    sales_worksheet.update_cell(last_row, column, total)
+    
+
 data = get_sales()
+sales_values = [float(num) for num in data]
+update_worksheet(sales_values)
+# sales_total = sum(sales_values)
+# print(sales_total)
+sales_total(sales_values)
