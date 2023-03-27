@@ -82,12 +82,24 @@ def sales_total(value):
 
 def show_date():
     """
-    Returns todays date & appends to worksheet
+    Returns todays date
     """
     today = date.today()
     print(f"Today's date: {today} \n")
+    return today
 
 
+def add_date():
+    """
+    Adds date to worksheet
+    """
+    now = str(date.today())
+    sales_worksheet = SHEET.worksheet('sales')
+    column = 5
+    last_row = len(sales_worksheet.get_all_values())
+    sales_worksheet.update_cell(last_row, column, now)
+    
+    
 def main():
     """
     Calls main progam function 
@@ -96,7 +108,9 @@ def main():
     sales_values = [float(num) for num in data]
     update_worksheet(sales_values)
     sales_total(sales_values)
+    add_date()
 
 
 print("Welcome to Daily Sales for all your sales reporting needs\n")
 main()
+
