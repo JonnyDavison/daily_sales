@@ -3,6 +3,8 @@ Imports Gspread libray
 """
 import gspread
 from google.oauth2.service_account import Credentials
+from datetime import date
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -25,6 +27,7 @@ def get_sales():
         print("Please enter todays sales as below seperated by commas")
         print("Follow the order: Food sales, Drink sales, 0% VAT sales")
         print("For example: 1234.56, 123, 123.45 \n")
+        show_date()
 
         todays_sales = input("Please Enter Sales here: ")
 
@@ -75,11 +78,25 @@ def sales_total(value):
     column = 4
     last_row = len(sales_worksheet.get_all_values())
     sales_worksheet.update_cell(last_row, column, total)
-    
 
-data = get_sales()
-sales_values = [float(num) for num in data]
-update_worksheet(sales_values)
-# sales_total = sum(sales_values)
-# print(sales_total)
-sales_total(sales_values)
+
+def show_date():
+    """
+    Returns todays date & appends to worksheet
+    """
+    today = date.today()
+    print(f"Today's date: {today} \n")
+
+
+def main():
+    """
+    Calls main progam function 
+    """
+    data = get_sales()
+    sales_values = [float(num) for num in data]
+    update_worksheet(sales_values)
+    sales_total(sales_values)
+
+
+print("Welcome to Daily Sales for all your sales reporting needs\n")
+main()
