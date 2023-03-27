@@ -1,5 +1,5 @@
 """
-Imports Gspread libray 
+Imports Gspread libray
 """
 import gspread
 from google.oauth2.service_account import Credentials
@@ -21,14 +21,31 @@ def get_sales():
     """
     Gets end of day sales
     """
-    print("Please enter todays sales as below separated by commas")
+    print("Please enter todays sales as below separated by commas in order")
     print("Food sales, Drink sales, 0% VAT ")
-    print("For example: 1234.56, 123.45, 123.45 \n")
+    print("For example: 1234.56, 123, 123.45 \n")
 
-    sales = input("Please Enter Sales here: ")
-    sales_data = sales.split(",")
-    print(sales)
+    todays_sales = input("Please Enter Sales here: ")
+
+    sales_data = todays_sales.split(",")
     print(sales_data)
-    
+    validate_input(sales_data)
+
+
+def validate_input(values):
+    """
+    Convert data to a float.
+    raises ValueError if strings cannot be a float
+    or if there isnt a value input
+    """
+    try:
+        [float(value) for value in values]
+        if len(values) != 3:
+            raise ValueError(
+                f"3 values seperated by a comma required. Found:{len(values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid Data: {e}, please try again")
+
 
 get_sales()
