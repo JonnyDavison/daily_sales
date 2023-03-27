@@ -21,15 +21,19 @@ def get_sales():
     """
     Gets end of day sales
     """
-    print("Please enter todays sales as below separated by commas in order")
-    print("Food sales, Drink sales, 0% VAT ")
-    print("For example: 1234.56, 123, 123.45 \n")
+    while True:
+        print("Please enter todays sales as below seperated by commas")
+        print("Follow the order: Food sales, Drink sales, 0% VAT sales")
+        print("For example: 1234.56, 123, 123.45 \n")
 
-    todays_sales = input("Please Enter Sales here: ")
+        todays_sales = input("Please Enter Sales here: ")
 
-    sales_data = todays_sales.split(",")
-    print(sales_data)
-    validate_input(sales_data)
+        sales_data = todays_sales.split(",")
+    
+        if validate_input(sales_data):
+            print("Data format is accepted")
+            break
+    return sales_data    
 
 
 def validate_input(values):
@@ -46,6 +50,9 @@ def validate_input(values):
             )
     except ValueError as e:
         print(f"Invalid Data: {e}, please try again")
+        return False
+
+    return True    
 
 
-get_sales()
+data = get_sales()
