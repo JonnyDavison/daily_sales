@@ -72,12 +72,12 @@ def sales_total(value):
     """
     Returns todays total sales to the user & appends to worksheet
     """
-    total = sum(value)
-    print(f"Total sales: {total} \n")
+    sales_total = sum(value)
     sales_worksheet = SHEET.worksheet('sales')
     column = 4
     last_row = len(sales_worksheet.get_all_values())
-    sales_worksheet.update_cell(last_row, column, total)
+    sales_worksheet.update_cell(last_row, column, sales_total)
+    return sales_total
 
 
 def show_date():
@@ -149,15 +149,44 @@ def update_cost_sheet(data):
     print("Update successfull.\n")
 
 
+def cost_total(value):
+    """
+    Returns todays total sales to the user & appends to worksheet
+    """
+    cost_total = sum(value)
+    costs_worksheet = SHEET.worksheet('costs')
+    column = 3
+    last_row = len(costs_worksheet.get_all_values())
+    costs_worksheet.update_cell(last_row, column, cost_total)
+    return cost_total
+
+
 def add_costs_date():
     """
     Adds date to worksheet
     """
     now = str(date.today())
     cost_worksheet = SHEET.worksheet('costs')
-    column = 3
+    column = 4
     last_row = len(cost_worksheet.get_all_values())
     cost_worksheet.update_cell(last_row, column, now)
+
+
+def sales_analysis(num1, num2):
+    """
+    Creates and returns sales figures to the user and worksheet
+    """
+    # Prints totals
+    print(f"Total Sales :{num1} Total Costs: {num2}")
+    # Calulates Gross Margin %
+    gross_margin = round(((num2 / num1) * 100), 1)
+    print(f"GM% {gross_margin}%")
+    # Calulates Cash Margin
+    cash_margin = (num1 - num2)
+    print(cash_margin)
+
+    return gross_margin
+    return cash_margin
 
 
 def main():
@@ -174,7 +203,12 @@ def main():
     costs = get_costs()
     cost_values = [float(num) for num in costs]
     update_cost_sheet(cost_values)
+    cost_total(cost_values)
     add_costs_date()
+    # Gets sales & costs totals and provides analysis
+    total_sales = sales_total(sales_values)
+    total_costs = cost_total(cost_values)
+    sales_analysis(total_sales, total_costs)
 
 
 print("Welcome to Daily Sales for all your sales reporting needs\n")
