@@ -58,7 +58,7 @@ def validate_sales(values):
     return True    
 
 
-def update_worksheet(data):
+def update_sales_sheet(data):
     """
     Updates worksheet adding new data
     """
@@ -139,13 +139,23 @@ def validate_costs(values):
     return True  
 
 
+def update_cost_sheet(data):
+    """
+    Updates worksheet adding new data
+    """
+    print("Updating sales sheet... \n")
+    sales_worksheet = SHEET.worksheet('sales')
+    sales_worksheet.append_row(data)
+    print("Update successfull.\n")
+
+
 def main():
     """
     Calls main progam function 
     """
     data = get_sales()
     sales_values = [float(num) for num in data]
-    update_worksheet(sales_values)
+    update_sales_sheet(sales_values)
     sales_total(sales_values)
     add_date()
     get_costs()
