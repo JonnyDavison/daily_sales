@@ -184,9 +184,7 @@ def sales_analysis(num1, num2):
     # Calulates Cash Margin
     cash_margin = (num1 - num2)
     print(cash_margin)
-
-    return gross_margin
-    return cash_margin
+    return [gross_margin, cash_margin]
 
 
 def main():
@@ -208,7 +206,8 @@ def main():
     # Gets sales & costs totals and provides analysis
     total_sales = sales_total(sales_values)
     total_costs = cost_total(cost_values)
-    sales_analysis(total_sales, total_costs)
+    analysis = sales_analysis(total_sales, total_costs)
+    print(analysis)
 
 
 print("Welcome to Daily Sales for all your sales reporting needs\n")
