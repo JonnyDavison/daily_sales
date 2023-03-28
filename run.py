@@ -89,7 +89,7 @@ def show_date():
     return today
 
 
-def add_date():
+def add_sales_date():
     """
     Adds date to worksheet
     """
@@ -143,22 +143,38 @@ def update_cost_sheet(data):
     """
     Updates worksheet adding new data
     """
-    print("Updating sales sheet... \n")
-    sales_worksheet = SHEET.worksheet('sales')
+    print("Updating costs sheet... \n")
+    sales_worksheet = SHEET.worksheet('costs')
     sales_worksheet.append_row(data)
     print("Update successfull.\n")
+
+
+def add_costs_date():
+    """
+    Adds date to worksheet
+    """
+    now = str(date.today())
+    cost_worksheet = SHEET.worksheet('costs')
+    column = 3
+    last_row = len(cost_worksheet.get_all_values())
+    cost_worksheet.update_cell(last_row, column, now)
 
 
 def main():
     """
     Calls main progam function 
     """
-    data = get_sales()
-    sales_values = [float(num) for num in data]
+    # Gets & Update Sales data
+    sales = get_sales()
+    sales_values = [float(num) for num in sales]
     update_sales_sheet(sales_values)
     sales_total(sales_values)
-    add_date()
-    get_costs()
+    add_sales_date()
+    # Get & Updates Costs data
+    costs = get_costs()
+    cost_values = [float(num) for num in costs]
+    update_cost_sheet(cost_values)
+    add_costs_date()
 
 
 print("Welcome to Daily Sales for all your sales reporting needs\n")
