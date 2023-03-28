@@ -1,9 +1,9 @@
 """
 Imports Gspread libray
 """
+from datetime import date
 import gspread
 from google.oauth2.service_account import Credentials
-from datetime import date
 
 
 SCOPE = [
@@ -29,14 +29,14 @@ def get_sales():
         print("For example: 1234.56, 123, 123.45 \n")
         show_date()
 
-        todays_sales = input("Please Enter Sales here: ")
+        todays_sales = input("Please Enter Sales here: \n")
 
         sales_data = todays_sales.split(",")
-    
+
         if validate_sales(sales_data):
             print("Sales data format is accepted")
             break
-    return sales_data    
+    return sales_data
 
 
 def validate_sales(values):
@@ -51,11 +51,11 @@ def validate_sales(values):
             raise ValueError(
                 f"3 values seperated by a comma required. Found:{len(values)}"
             )
-    except ValueError as e:
-        print(f"Invalid Data: {e}, please try again")
+    except ValueError as error:
+        print(f"Invalid Data: {error}, please try again")
         return False
 
-    return True    
+    return True
 
 
 def update_sales_sheet(data):
@@ -68,7 +68,7 @@ def update_sales_sheet(data):
     print("Update successfull.\n")
 
 
-def sales_total(value):
+def sales_totals(value):
     """
     Returns todays total sales to the user & appends to worksheet
     """
@@ -98,7 +98,7 @@ def add_sales_date():
     column = 5
     last_row = len(sales_worksheet.get_all_values())
     sales_worksheet.update_cell(last_row, column, now)
-    
+
 
 def get_costs():
     """
@@ -110,7 +110,7 @@ def get_costs():
         print("Follow the order: Food Cost, Labour Cost")
         print("For example: 1234.56, 1234.56 \n")
 
-        todays_costs = input("Please Enter Food Cost then Labour Cost here: ")
+        todays_costs = input("Please Enter Food Cost & Labour Cost here: \n")
 
         costs_data = todays_costs.split(",")
 
@@ -132,11 +132,11 @@ def validate_costs(values):
             raise ValueError(
                 f"2 values seperated by a comma required. Found:{len(values)}"
             )
-    except ValueError as e:
-        print(f"Invalid Data: {e}, please try again")
+    except ValueError as error:
+        print(f"Invalid Data: {error}, please try again")
         return False
 
-    return True  
+    return True
 
 
 def update_cost_sheet(data):
@@ -149,7 +149,7 @@ def update_cost_sheet(data):
     print("Update successfull.\n")
 
 
-def cost_total(value):
+def cost_totals(value):
     """
     Returns todays total sales to the user & appends to worksheet
     """
@@ -180,7 +180,7 @@ def sales_analysis(num1, num2):
     gross_margin = round((100-((num2 / num1) * 100)), 2)
     print(f"Gross Margin%: {gross_margin}%")
     # Calulates Cash Margin
-    cash_margin = (num1 - num2)
+    cash_margin = num1 - num2
     print(f"Cash Margin {cash_margin} \n")
     # Prints totals
     print(f"Total Sales :{num1} Total Costs: {num2}")
@@ -214,23 +214,23 @@ def update_results_sheet(data):
 
 def main():
     """
-    Calls main progam function 
+    Calls main progam function
     """
     # Gets & Update Sales data
     sales = get_sales()
     sales_values = [float(num) for num in sales]
     update_sales_sheet(sales_values)
-    sales_total(sales_values)
+    sales_totals(sales_values)
     add_sales_date()
     # Get & Updates Costs data
     costs = get_costs()
     cost_values = [float(num) for num in costs]
     update_cost_sheet(cost_values)
-    cost_total(cost_values)
+    cost_totals(cost_values)
     add_costs_date()
     # Gets sales & costs totals and provides analysis
-    total_sales = sales_total(sales_values)
-    total_costs = cost_total(cost_values)
+    total_sales = sales_totals(sales_values)
+    total_costs = cost_totals(cost_values)
     labour_cost = labour_analysis()
     analysis = sales_analysis(total_sales, total_costs) + [labour_cost]
     update_results_sheet(analysis)
