@@ -33,13 +33,13 @@ def get_sales():
 
         sales_data = todays_sales.split(",")
     
-        if validate_input(sales_data):
-            print("Data format is accepted")
+        if validate_sales(sales_data):
+            print("Sales data format is accepted")
             break
     return sales_data    
 
 
-def validate_input(values):
+def validate_sales(values):
     """
     Convert data to a float.
     raises ValueError if strings cannot be a float
@@ -99,7 +99,46 @@ def add_date():
     last_row = len(sales_worksheet.get_all_values())
     sales_worksheet.update_cell(last_row, column, now)
     
-    
+
+def get_costs():
+    """
+    Gets costs for the day incuding Cost of sales(COS) and
+    labour costs
+    """
+    while True:
+        print("Please enter todays costs as below seperated by commas")
+        print("Follow the order: Food Cost, Labour Cost")
+        print("For example: 1234.56, 1234.56 \n")
+
+        todays_costs = input("Please Enter Food Cost then Labour Cost here: ")
+
+        costs_data = todays_costs.split(",")
+
+        if validate_costs(costs_data):
+            print("Costs data format is accepted")
+            break
+    return costs_data
+
+
+def validate_costs(values):
+    """
+    Convert data to a float.
+    raises ValueError if strings cannot be a float
+    or if there isnt a value input
+    """
+    try:
+        [float(value) for value in values]
+        if len(values) != 2:
+            raise ValueError(
+                f"2 values seperated by a comma required. Found:{len(values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid Data: {e}, please try again")
+        return False
+
+    return True  
+
+
 def main():
     """
     Calls main progam function 
@@ -109,6 +148,7 @@ def main():
     update_worksheet(sales_values)
     sales_total(sales_values)
     add_date()
+    get_costs()
 
 
 print("Welcome to Daily Sales for all your sales reporting needs\n")
