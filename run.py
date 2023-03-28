@@ -174,17 +174,42 @@ def add_costs_date():
 
 def sales_analysis(num1, num2):
     """
-    Creates and returns sales figures to the user and worksheet
+    Calculate and returns sales figures and returns to user
     """
-    # Prints totals
-    print(f"Total Sales :{num1} Total Costs: {num2}")
     # Calulates Gross Margin %
-    gross_margin = round(((num2 / num1) * 100), 1)
-    print(f"GM% {gross_margin}%")
+    gross_margin = round((100-((num2 / num1) * 100)), 2)
+    print(f"Gross Margin%: {gross_margin}%")
     # Calulates Cash Margin
     cash_margin = (num1 - num2)
-    print(cash_margin)
-    return [gross_margin, cash_margin]
+    print(f"Cash Margin {cash_margin} \n")
+    # Prints totals
+    print(f"Total Sales :{num1} Total Costs: {num2}")
+    return [num1, num2, gross_margin, cash_margin]
+
+
+def labour_analysis():
+    """
+    Calculates and returns labour % to user and worksheet
+    """
+    costs_worksheet_total = SHEET.worksheet('costs').col_values(2)
+    total_cost = costs_worksheet_total[-1]
+
+    cost_worksheet_labour = SHEET.worksheet('costs').col_values(1)
+    labour_result = cost_worksheet_labour[-1]
+
+    labour = round((100-((float(labour_result) / float(total_cost)) * 100)), 2)
+    print(f"Labour % : {labour}")
+    return labour
+
+
+def update_results_sheet(data):
+    """
+    Updates the results worksheet adding new data
+    """
+    print("Updating results sheet... \n")
+    results_worksheet = SHEET.worksheet('results')
+    results_worksheet.append_row(data)
+    print("Update successfull.\n")
 
 
 def main():
@@ -206,10 +231,11 @@ def main():
     # Gets sales & costs totals and provides analysis
     total_sales = sales_total(sales_values)
     total_costs = cost_total(cost_values)
-    analysis = sales_analysis(total_sales, total_costs)
-    print(analysis)
+    labour_cost = labour_analysis()
+    analysis = sales_analysis(total_sales, total_costs) + [labour_cost]
+    update_results_sheet(analysis)
 
 
 print("Welcome to Daily Sales for all your sales reporting needs\n")
 main()
-
+print("Thank you for using DailySales")
