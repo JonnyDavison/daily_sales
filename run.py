@@ -4,6 +4,7 @@ Imports Gspread libray
 from datetime import date
 import gspread
 from google.oauth2.service_account import Credentials
+import pyfiglet
 
 
 SCOPE = [
@@ -236,7 +237,10 @@ def main():
     update_results_sheet(analysis)
 
 
+logo = pyfiglet.figlet_format("Daily   Sales")
+print(logo)
 print("Welcome to Daily Sales for all your sales reporting needs\n")
 print("Aiming to provide you with all your financial reporting needs")
-main()
-print("Thank you for using DailySales")
+# main()
+end = pyfiglet.figlet_format("Thank   you \n for   using \nDailySales")
+print(end)
