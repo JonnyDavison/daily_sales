@@ -237,5 +237,6 @@ def main():
 
 
 print("Welcome to Daily Sales for all your sales reporting needs\n")
+print("Aiming to provide you with all your financial reporting needs")
 main()
 print("Thank you for using DailySales")
