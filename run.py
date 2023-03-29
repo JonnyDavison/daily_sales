@@ -28,12 +28,12 @@ def get_sales():
         print("Please enter todays sales as below seperated by commas")
         print("Follow the order: Food sales, Drink sales, 0% VAT sales")
         print("For example: 1234.56, 123, 123.45 \n")
-        show_date()
+        show_date() 
 
         todays_sales = input("Please Enter Sales here: \n")
 
         sales_data = todays_sales.split(",")
-
+        
         if validate_sales(sales_data):
             print("Sales data format is accepted")
             break
