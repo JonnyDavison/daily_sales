@@ -1,5 +1,5 @@
 """
-Imports Gspread libray
+Imports libraries
 """
 from datetime import date
 import gspread
@@ -192,13 +192,14 @@ def labour_analysis():
     """
     Calculates and returns labour % to user and worksheet
     """
-    costs_worksheet_total = SHEET.worksheet('costs').col_values(2)
-    total_cost = costs_worksheet_total[-1]
-
-    cost_worksheet_labour = SHEET.worksheet('costs').col_values(1)
+    # Pulls total sales value from the the worksheet
+    sales_worksheet_total = SHEET.worksheet('sales').col_values(4)
+    total_sale = sales_worksheet_total[-1]
+    # Pulls Labour costs value from the the worksheet
+    cost_worksheet_labour = SHEET.worksheet('costs').col_values(2)
     labour_result = cost_worksheet_labour[-1]
-
-    labour = round((100-((float(labour_result) / float(total_cost)) * 100)), 2)
+    # Calculates the labour % and return to user
+    labour = round(((float(labour_result) / float(total_sale)) * 100), 2)
     print(f"Labour % : {labour}")
     return labour
 
@@ -242,5 +243,6 @@ print(logo)
 print("Welcome to Daily Sales for all your sales reporting needs\n")
 print("Aiming to provide you with all your financial reporting needs")
 main()
-end = pyfiglet.figlet_format("Thank   you \n for   using \nDailySales")
+end = pyfiglet.figlet_format("Thank   you")
 print(end)
+print("for using Daily Sales")
