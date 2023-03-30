@@ -69,7 +69,7 @@ This is the [Google worksheet](https://docs.google.com/spreadsheets/d/1NckZYPLVF
 [Back to top ⇧](#daily-sales)
 
 ## User Experience
-### User Expectations
+### User Expectations
 - Able to quickly understand what the app is for
 - Provide additional information directing the user 
 - Iteractions have feedback
@@ -102,84 +102,113 @@ The flowchart was designed at the start of the project to map out the logic path
 [Back to top ⇧](#daily-sales)
 
 ## Features
-Intro
+Intro and Sales Input
+![Welcome screen](assets/images/welcome.webp)
 
-Sales  input
+Custom Error handling 
+![Error handleing text](assets/images/rederror.webp)
 
-errors
+Cost Input
+![Cost input](assets/images/costinput.webp)
 
-costs input
+Calculation Values
+![Values returned to user](assets/images/yellowdata.webp)
 
-return values 
+## Google Sheets
+Google sheets is used to store and recall the data, giving the user the ability to save daily accounts and store them
 
-Goolge SS
-sales
-costs
-results
+Sales Sheet
+![Sales sheet](assets/images/salessheet.webp)
+Costs Sheet
+![Cost sheet](assets/images/costssheet.webp)
+Results sheet
+![Results sheet](assets/images/resultssheet.webp)
 
 
-Future Implementations
+## Future Implementations
+The next versions of Daily Sales would see the development of further analysis being provided to the user. Taking in and storing of more in-depth data set, adding more detailed breakdown of the analysis. It would also be beneificial to the user to be able to run reports over mulitple days or in set patterns in order to understand sales trends. 
 
-
-Back to top ⇧
-
-Technologies Used
-Languages Used
-PYTHON - The project logic and operations inside CLI were developed using Python language.
-Programs Used
-GitHub - Source code hosted on GitHub, deployed using Git Pages.
-GitPod - Used to commit, comment and push code during the development process.
-grammerly spell 
-LanguageTool - Used to spell-check the contents of README.md
-pyfiglet
-Heroku - used to deploy the project
-Imgur - used to host the background image and favicon
-Google worksheet - used to host the worksheet to hold data
-Lucidchart - used to make the flowchart for the project
-[Back to top ⇧](#daily-sales)
-
-Deployment
-The project was written and hosted on GitHub. The author used GitHub's terminal output with command 'python3 run.py' to run the program logic. After the project was developed enough, it was deployed on Heroku using the following method:
-
-Add dependencies in GitPod to requirements.txt file with command "pip3 freeze > requirements.txt"
-Commit and push to GitHub
-Go to the Heroku Dashboard
-Click "Create new app"
-Name app and select location
-Add Config Vars for Creds and Port in Settings tab
-Add the buildbacks to Python and NodeJS in that order
-Select appropriate deployment method, GitHub
-Connect to Github and link to repository
-Enable automatic deployment and/or deploy manually
-Click on Deploy
-[Back to top ⇧](#daily-sales)
-
-Testing
-Testing information can be found in a separate testing file TESTING.md.
 
 [Back to top ⇧](#daily-sales)
 
-Credits
-Code used and adapted
-The author used his previous projects, 
+## Technologies Used
+### Languages Used
+PYTHON - The project logic and operations inside CLI were developed using Python.
 
-Code Institute template was used to start the project.
-Using Google worksheet was seen during Code Institute Love Sandwiches project, ( GithHub repository here ).
+### Programs Used
+- GitHub - Source code hosted on GitHub, deployed using Git Pages.
+- GitPod - Used to commit, comment and push code during the development process.
+- LanguageTool - Used to spell-check the contents of README.md
+- Heroku - used to deploy the project
+- Google worksheet - used to host the worksheet to hold data
+- Lucidchart - used to make the flowchart for the project
+
+### Libraries used
+- Pyfiglet - Used to add large text
+- Colorama - Bringing some color to the project
+- Datetime - Used to get the current time
+
+[Back to top ⇧](#daily-sales)
+
+## Deployment
+The project was written and hosted on GitHub. The GitHub terminal was used in the early deveopment stages with command 'python3 run.py' to run and test the programe logic. After development had reached the later stages it was deployed on Heroku using the following method:
+
+- Add dependencies in GitPod to requirements.txt file with command "pip3 freeze > requirements.txt"
+- Commit and push to GitHub
+- Go to the Heroku Dashboard
+- Click "Create new app"
+- Name app and select location
+- Add Config Vars for Creds and Port in Settings tab
+- Add the buildbacks to Python and NodeJS in that order
+- Select appropriate deployment method, GitHub
+- Connect to Github and link to repository
+- Enable automatic deployment and/or deploy manually
+- Click on Deploy
+[Back to top ⇧](#daily-sales)
+
+## Testing
+In respose to User stories.
+- I want to know what is this site for
+    - Upon loading the logo, and instructions explain what the program does
+- I want to know what information to provide
+    - It requests specifc information from the user and explains what format to provide it in
+- I want to store my information
+    - The connected Google Sheet stores and records the data
+- I want to get feedback on my interactions
+    - Throught out the programe there is guidence before and a respose to inputs provided
+- I want to get relavant information returned to me
+    - Information that is usseful in the day-to-day management of the buisness is returned to the user. This could be made bespoke should other information be required
+- I want no bugs or issues in the program
+    - Error messages loop to the request of the information until correct data is provided. At this time the author is unaware of any ways a 'normal' user could 'break' the program
+
+### Manual Testing   
+Manual testing was carried out throughout the development of each element in the program, running the parts individually and together. This was done through the GitPod terminal. After the project was depolyed to Heroku further manual testing was carried out. 
+
+## Bugs
+As project was built there was many bugs during the development porcess, many of these where resolved quickly through reserach the relevant documentation, stackoverflow and W3Schools
+
+2 Bugs of note:
+
+- Validation errors with the return of strings and floats, this was resolved by returnong to the Code Institute LMS and following throught the learning material in order to find specifc information
+
+- Updating multipule strings to the sheet and returning the values. This required deep dive throught
+ the gspread documnetation, updateing of teh code and formating of the sheet to return values that could be read correectly.
+
+[Back to top ⇧](#daily-sales)
+
+## Credits
+### Code used and adapted
+- Using Google worksheet to store data the starting point of this was taken from Code Institute [Love Sandwiches project.](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) 
+- Code Institute Python Essentials template was provided for use and is avaiable [here](https://github.com/Code-Institute-Org/python-essentials-template).
+
 
 
 Websites visited to gather knowledge
-There were many sites visited during the duration of the project. Google was used to produce results of the specific query, and Stack Overflow proved to be the best source of information for various queries/issues.
+There were many sites visited during the duration of the project. 
+ - Google 
+ - Stack Overflow
+ - W3Schools
 
-The standout webpages are:
-
-This website was used to learn about sorting a string.
-This website was used to learn about tabulating the leaderboard.
-This website was used to learn about sleep.
-This website was used to learn about typing print, input and clear screen.
-This website was used to learn about restarting the program.
-This website was used to learn about printing on a same line
-
-Acknowledgments
 
 
 [Back to top ⇧](#daily-sales)
