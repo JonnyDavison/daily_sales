@@ -3,15 +3,13 @@
 
 ### [Visit Live Site](https://daily-sales.herokuapp.com/) / [Visit Repository](https://github.com/JonnyDavison/daily_sales)
 
-Daily Sales is a Code Institute Full-stack development program project built in Python. Made with the food indusrty in particular independant restaurants and food stores in mind. Providing a quick and simple analysis to track daily trends and store these in google sheets to refeclt on over time. 
+Daily Sales is a Code Institute Full-stack development program project built in Python. Made with the food industry, in particular independent restaurants and food stores, in mind. Providing a quick and simple analysis to track daily trends and store these in google sheets to reflect on over time. 
 
 ![Daily Sales app image](assets/images/dsfullterminal.webp)
-Visit the live site Here.
-(link)
+
 
 [Back to top ⇧](#daily-sales)
 ## CONTENTS
-
  - [Project Overview](#project-overview)
     - [Project Goals](#project-goals)
 - [User Experience](#user-experience)
@@ -38,19 +36,19 @@ Visit the live site Here.
 
 
 ## Project Overview
-Developing 'Daily Sales' has been a been a long time coming from the authors previous career. This daily analysis is essential to the succeful running of small and medium food buisness, where this information is key to decission making ahead of the following day. The development process included, reserach, indusrty knowlege and followed a logic flowchart. There are built in features to assit and guide the user throught the program:
+Developing 'Daily Sales' has been a long time coming from the author's previous career. This daily analysis is essential to the successful running of small and medium food business, where this information is key to decision making ahead of the following day. The development process included, research, industry knowledge and followed a logic flowchart. There are built in features to assist and guide the user through the program:
 
-- Error handeling to validate user input
+- Error handling to validate user input
 - User feedback on the input (Custom ValueError messages)
 - Text spacing for user readability 
 - Useful information passed back quickly to the user
 - Information stored in order to provide accounts for review
 
 The project also uses Google Worksheet API for:
-- Inputing and storing Data 
+- Inputting and storing Data 
 - Sales, Costs & Results pages to store financial data
-- Pulling data for calulation
-- Storing the calulation results
+- Pulling data for calculation
+- Storing the calculation results
 - Providing the user with a large data set
 
 This is the [Google worksheet](https://docs.google.com/spreadsheets/d/1NckZYPLVFrlbqXG2FIFwfhZlNg0fQ67WtQURLmhWKC8/edit?usp=sharing) used to hold the data
@@ -67,8 +65,8 @@ This is the [Google worksheet](https://docs.google.com/spreadsheets/d/1NckZYPLVF
 ### User Expectations
 - Able to quickly understand what the app is for
 - Provide additional information directing the user 
-- Iteractions have feedback
-- Provide format instructions to assit in gathering the correct data
+- Interactions have feedback
+- Provide format instructions to assist in gathering the correct data
 - No logic errors
 
 ### User Stories
@@ -76,13 +74,14 @@ This is the [Google worksheet](https://docs.google.com/spreadsheets/d/1NckZYPLVF
 - I want to know what information to provide
 - I want to store my information
 - I want to get feedback on my interactions
-- I want to get relavant information returned to me
+- I want to get relevant information returned to me
 - I want no bugs or issues in the program
+
 [Back to top ⇧](#daily-sales)
 
 ## Design
 ### Colour Scheme & Styling
-In order to imporve the UX and readibility both Pyfiglet and Colorama where imported. Pyfiglet allows large text to be displayed for the 'logo'. Colorama provides text colour highlighting essential information for the user. the colours used are inline with usual expectioans
+In order to improve the UX and readability, both Pyfiglet and Colorama were imported. Pyfiglet allows large text to be displayed for the 'logo'. Colorama provides text colour highlighting essential information for the user. The colours used are inline with usual exceptions
 - Red for an input error
 - Green for accepted values
 - Yellow to highlight the results the user returned.
@@ -101,7 +100,7 @@ The flowchart was designed at the start of the project to map out the logic path
 ![Welcome screen](assets/images/welcome.webp)
 
 ### Custom Error handling 
-![Error handleing text](assets/images/rederror.webp)
+![Error handling text](assets/images/rederror.webp)
 
 ### Cost Input
 ![Cost input](assets/images/costinput.webp)
@@ -110,18 +109,23 @@ The flowchart was designed at the start of the project to map out the logic path
 ![Values returned to user](assets/images/yellowdata.webp)
 
 ## Google Sheets
-Google sheets is used to store and recall the data, giving the user the ability to save daily accounts and store them
+Google sheets are used to store and recall the data, giving the user the ability to save daily accounts and store them
 
 Sales Sheet
+
 ![Sales sheet](assets/images/salessheet.webp)
+
 Costs Sheet
+
 ![Cost sheet](assets/images/costssheet.webp)
+
 Results sheet
+
 ![Results sheet](assets/images/resultssheet.webp)
 
 
 ## Future Implementations
-The next versions of Daily Sales would see the development of further analysis being provided to the user. Taking in and storing of more in-depth data set, adding more detailed breakdown of the analysis. It would also be beneificial to the user to be able to run reports over mulitple days or in set patterns in order to understand sales trends. 
+The next versions of Daily Sales would see the development of further analysis being provided to the user. Taking in and storing of more in-depth data set, adding more detailed breakdown of the analysis. It would also be beneficial to the user to be able to run reports over multiple days or in set patterns in order to understand sales trends. 
 
 
 [Back to top ⇧](#daily-sales)
@@ -146,7 +150,7 @@ PYTHON - The project logic and operations inside CLI were developed using Python
 [Back to top ⇧](#daily-sales)
 
 ## Deployment
-The project was written and hosted on GitHub. The GitHub terminal was used in the early deveopment stages with command 'python3 run.py' to run and test the programe logic. After development had reached the later stages it was deployed on Heroku using the following method:
+The project was written and hosted on GitHub. The GitHub terminal was used in the early development stages with command 'python3 run.py' to run and test the program logic. After development had reached the later stages, it was deployed on Heroku using the following method:
 
 - Add dependencies in GitPod to requirements.txt file with command "pip3 freeze > requirements.txt"
 - Commit and push to GitHub
@@ -154,7 +158,7 @@ The project was written and hosted on GitHub. The GitHub terminal was used in th
 - Click "Create new app"
 - Name app and select location
 - Add Config Vars for Creds and Port in Settings tab
-- Add the buildbacks to Python and NodeJS in that order
+- Add the build packs to Python and NodeJS in that order
 - Select appropriate deployment method, GitHub
 - Connect to Github and link to repository
 - Enable automatic deployment and/or deploy manually
@@ -162,43 +166,43 @@ The project was written and hosted on GitHub. The GitHub terminal was used in th
 [Back to top ⇧](#daily-sales)
 
 ## Testing
-In respose to User stories.
+In response to User stories.
 - I want to know what is this site for
     - Upon loading the logo, and instructions explain what the program does
 - I want to know what information to provide
-    - It requests specifc information from the user and explains what format to provide it in
+    - It requests specific information from the user and explains what format to provide it in
 - I want to store my information
     - The connected Google Sheet stores and records the data
 - I want to get feedback on my interactions
-    - Throught out the programe there is guidence before and a respose to inputs provided
-- I want to get relavant information returned to me
-    - Information that is usseful in the day-to-day management of the buisness is returned to the user. This could be made bespoke should other information be required
+    - Throughout the program there is guidance before and a response to inputs provided
+- I want to get relevant information returned to me
+    - Information that is useful in the day-to-day management of the business is returned to the user. This could be made bespoke should other information be required
 - I want no bugs or issues in the program
-    - Error messages loop to the request of the information until correct data is provided. At this time the author is unaware of any ways a 'normal' user could 'break' the program
+    - Error messages loop to the request of the information until correct data is provided. At this time, the author is unaware of any ways a 'normal' user could 'break' the program
 
 ### Manual Testing   
-Manual testing was carried out throughout the development of each element in the program, running the parts individually and together. This was done through the GitPod terminal. After the project was depolyed to Heroku further manual testing was carried out. 
+Manual testing was carried out throughout the development of each element in the program, running the parts individually and together. This was done through the GitPod terminal. After the project was deployed to Heroku further manual testing was carried out. 
+
 ### Automated Testing
 [Code Institute Python Linter](https://pep8ci.herokuapp.com/)
-This returned no errors after compelating the code base at the submission phase.
+This returned no errors after completing the code base at the submission phase.
 ![CI Python Linter Result showing no errors](assets/images/cipythonlinter.webp)
 
 ## Bugs
-As project was built there was many bugs during the development porcess, many of these where resolved quickly through reserach the relevant documentation, stackoverflow and W3Schools
+As the project was built there were many bugs during the development process, many of these were resolved quickly through research of the relevant documentation, Stack Overflow and W3Schools
 
 2 Bugs of note:
 
-- Validation errors with the return of strings and floats, this was resolved by returnong to the Code Institute LMS and following throught the learning material in order to find specifc information
+- Validation errors with the return of strings and floats, this was resolved by studying the Code Institute LMS and following through the learning material in order to find specific information
 
-- Updating multipule strings to the sheet and returning the values. This required deep dive throught
- the gspread documnetation, updateing of teh code and formating of the sheet to return values that could be read correectly.
+- Updating multiple strings to the sheet and returning the values. This required a deep dive through the gspread documentation, updating of the code and formatting of the sheet to return values that could be read correctly.
 
 [Back to top ⇧](#daily-sales)
 
 ## Credits
 ### Code used and adapted
-- Using Google worksheet to store data the starting point of this was taken from Code Institute [Love Sandwiches project.](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) 
-- Code Institute Python Essentials template was provided for use and is avaiable [here](https://github.com/Code-Institute-Org/python-essentials-template).
+- Using Google worksheet to store data, the starting point of this was taken from Code Institute [Love Sandwiches project.](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) 
+- Code Institute Python Essentials template was provided for use and is available [here](https://github.com/Code-Institute-Org/python-essentials-template).
 
 ### Websites visited to gather information
 There were many sites visited during the duration of the project. 
