@@ -33,8 +33,9 @@ def get_sales():
         print("For example: 1234.56, 123, 123.45 \n")
         show_date()
 
-        todays_sales = input("Please Enter Sales here \
-            Food sales, Drink sales, 0% VAT sales: \n")
+        todays_sales = input(
+            "Please Enter Sales, Food sales, Drink sales, 0% VAT sales: \n"
+        )
         sales_data = todays_sales.split(",")
         # Calls validatior and confirms correct input
         if validate_sales(sales_data):
@@ -186,9 +187,9 @@ def sales_analysis(num1, num2):
     print(f"{Fore.YELLOW}Gross Margin%: {gross_margin}%")
     # Calulates Cash Margin
     cash_margin = num1 - num2
-    print(f"{Fore.YELLOW}Cash Margin {cash_margin} \n")
+    print(f"{Fore.YELLOW}Cash Margin: €{cash_margin} \n")
     # Prints totals
-    print(f"{Fore.YELLOW}Total Sales :{num1} Total Costs: {num2}")
+    print(f"{Fore.YELLOW}Total Costs: €{num2} \nTotal Sales: €{num1} ")
     return [num1, num2, gross_margin, cash_margin]
 
 
@@ -204,7 +205,7 @@ def labour_analysis():
     labour_result = cost_worksheet_labour[-1]
     # Calculates the labour % and return to user
     labour = round(((float(labour_result) / float(total_sale)) * 100), 2)
-    print(f"{Fore.YELLOW}Labour % : {labour}")
+    print(f"{Fore.YELLOW}Labour % : {labour}%")
     return labour
 
 
