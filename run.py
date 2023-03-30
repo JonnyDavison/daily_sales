@@ -5,6 +5,9 @@ from datetime import date
 import gspread
 from google.oauth2.service_account import Credentials
 import pyfiglet
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 
 SCOPE = [
@@ -35,7 +38,7 @@ def get_sales():
         sales_data = todays_sales.split(",")
         
         if validate_sales(sales_data):
-            print("Sales data format is accepted")
+            print(f"{Fore.GREEN}Sales data format is accepted")
             break
     return sales_data
 
@@ -50,10 +53,10 @@ def validate_sales(values):
         [float(value) for value in values]
         if len(values) != 3:
             raise ValueError(
-                f"3 values seperated by a comma required. Found:{len(values)}"
+                f"{Fore.RED}3 values seperated by a comma required. Found:{len(values)}"
             )
     except ValueError as error:
-        print(f"Invalid Data: {error}, please try again")
+        print(f"{Fore.RED}Invalid Data: {error}, please try again")
         return False
 
     return True
@@ -131,10 +134,10 @@ def validate_costs(values):
         [float(value) for value in values]
         if len(values) != 2:
             raise ValueError(
-                f"2 values seperated by a comma required. Found:{len(values)}"
+               f"{Fore.RED} 2 values seperated by a comma required. Found:{len(values)}"
             )
     except ValueError as error:
-        print(f"Invalid Data: {error}, please try again")
+        print(f"{Fore.RED} Invalid Data: {error}, please try again")
         return False
 
     return True
@@ -179,12 +182,12 @@ def sales_analysis(num1, num2):
     """
     # Calulates Gross Margin %
     gross_margin = round((100-((num2 / num1) * 100)), 2)
-    print(f"Gross Margin%: {gross_margin}%")
+    print(f"{Fore.YELLOW}Gross Margin%: {gross_margin}%")
     # Calulates Cash Margin
     cash_margin = num1 - num2
-    print(f"Cash Margin {cash_margin} \n")
+    print(f"{Fore.YELLOW}Cash Margin {cash_margin} \n")
     # Prints totals
-    print(f"Total Sales :{num1} Total Costs: {num2}")
+    print(f"{Fore.YELLOW}Total Sales :{num1} Total Costs: {num2}")
     return [num1, num2, gross_margin, cash_margin]
 
 
@@ -200,7 +203,7 @@ def labour_analysis():
     labour_result = cost_worksheet_labour[-1]
     # Calculates the labour % and return to user
     labour = round(((float(labour_result) / float(total_sale)) * 100), 2)
-    print(f"Labour % : {labour}")
+    print(f"{Fore.YELLOW}Labour % : {labour}")
     return labour
 
 
