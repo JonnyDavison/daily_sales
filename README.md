@@ -178,6 +178,10 @@ In respose to User stories.
 
 ### Manual Testing   
 Manual testing was carried out throughout the development of each element in the program, running the parts individually and together. This was done through the GitPod terminal. After the project was depolyed to Heroku further manual testing was carried out. 
+### Automated Testing
+[Code Institute Python Linter](https://pep8ci.herokuapp.com/)
+This returned no errors after compelating the code base at the submission phase.
+![CI Python Linter Result showing no errors](assets/images/cipythonlinter.webp)
 
 ## Bugs
 As project was built there was many bugs during the development porcess, many of these where resolved quickly through reserach the relevant documentation, stackoverflow and W3Schools

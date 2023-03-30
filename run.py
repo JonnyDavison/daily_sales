@@ -52,7 +52,8 @@ def validate_sales(values):
         [float(value) for value in values]
         if len(values) != 3:
             raise ValueError(
-                f"{Fore.RED}3 values seperated by a comma required. Found:{len(values)}"
+                f"{Fore.RED} \
+                3 values seperated by a comma required. Found:{len(values)}"
             )  # Line above left over 80 characters for readability
     except ValueError as error:
         print(f"{Fore.RED}Invalid Data: {error}, please try again")
@@ -132,7 +133,8 @@ def validate_costs(values):
         [float(value) for value in values]
         if len(values) != 2:
             raise ValueError(
-               f"{Fore.RED} 2 values seperated by a comma required. Found:{len(values)}"
+               f"{Fore.RED} \
+               2 values seperated by a comma required. Found:{len(values)}"
             )  # Line above left over 80 characters for readability
     except ValueError as error:
         print(f"{Fore.RED} Invalid Data: {error}, please try again")
