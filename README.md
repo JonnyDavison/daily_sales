@@ -9,38 +9,33 @@ Daily Sales is a Code Institute Full-stack development program project built in 
 Visit the live site Here.
 (link)
 
-
+[Back to top ⇧](#daily-sales)
 ## CONTENTS
 
- - Project Overview
-    - Project Goals
-- User Experience
-    - User Expectations
-    - User Stories
-- Design
-    - Colour Scheme & Styling
-    - Structure
-    - Flow chart
-- Features
-    - Intro
-    - Name input
-    - Guide
-    - Quiz
-    - More knowledge
-    - Quiz end messages
-    - Leaderboard update message and display
-    - Quiz replay
-    - Secret username
-    - Front-end features
-- Future Implementations
-- Technologies Used
-    - Languages Used
-    - Programs Used
-- Deployment
-- Testing
-- Credits
-    - Code used and adapted
-    - Acknowledgments
+ - [Project Overview](#project-overview)
+    - [Project Goals](#project-goals)
+- [User Experience](#user-experience)
+    - [User Expectations](#user-expectations)
+    - [User Stories](#user-stories)
+- [Design](#design)
+    - [Colour Scheme & Styling](#colour-scheme--styling)
+    - [Structure](#structure)
+    - [Flow chart](#daily-sales-logic-flow-chart)
+- [Features](#features)
+    - [Intro](#intro-and-sales-input)
+    - [Custom Error Handling](#custom-error-handling)
+    - [Cost Input](#cost-input)
+    - [Calculation Values](#calculation-values)
+- [Future Implementations](#future-implementations)
+- [Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
+    - [Programs Used](#programs-used)
+- [Deployment](#deployment)
+- [Testing](#testing)
+- [Credits](#credits)
+    - [Code used and adapted](#code-used-and-adapted)
+    - [Websites Used to gather information](#websites-visited-to-gather-information)
+
 
 ## Project Overview
 Developing 'Daily Sales' has been a been a long time coming from the authors previous career. This daily analysis is essential to the succeful running of small and medium food buisness, where this information is key to decission making ahead of the following day. The development process included, reserach, indusrty knowlege and followed a logic flowchart. There are built in features to assit and guide the user throught the program:
@@ -102,16 +97,16 @@ The flowchart was designed at the start of the project to map out the logic path
 [Back to top ⇧](#daily-sales)
 
 ## Features
-Intro and Sales Input
+### Intro and Sales Input
 ![Welcome screen](assets/images/welcome.webp)
 
-Custom Error handling 
+### Custom Error handling 
 ![Error handleing text](assets/images/rederror.webp)
 
-Cost Input
+### Cost Input
 ![Cost input](assets/images/costinput.webp)
 
-Calculation Values
+### Calculation Values
 ![Values returned to user](assets/images/yellowdata.webp)
 
 ## Google Sheets
@@ -201,13 +196,11 @@ As project was built there was many bugs during the development porcess, many of
 - Using Google worksheet to store data the starting point of this was taken from Code Institute [Love Sandwiches project.](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) 
 - Code Institute Python Essentials template was provided for use and is avaiable [here](https://github.com/Code-Institute-Org/python-essentials-template).
 
-
-
-Websites visited to gather knowledge
+### Websites visited to gather information
 There were many sites visited during the duration of the project. 
- - Google 
- - Stack Overflow
- - W3Schools
+- Google 
+- Stack Overflow
+- W3Schools
 
 
 
