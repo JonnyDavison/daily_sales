@@ -1,21 +1,25 @@
+![Daily Sales logo](assets/images/dslogo.webp)
 # Daily Sales
 
 ### [Visit Live Site](https://daily-sales.herokuapp.com/) / [Visit Repository](https://github.com/JonnyDavison/daily_sales)
 
 Daily Sales is a Code Institute Full-stack development program project built in Python. Made with the food indusrty in particular independant restaurants and food stores in mind. Providing a quick and simple analysis to track daily trends and store these in google sheets to refeclt on over time. 
 
-![website image](images/blablabla.webp)
+![Daily Sales app image](assets/images/dsfullterminal.webp)
 Visit the live site Here.
 (link)
 
 
-## CONTENTS
+## CONTENTS
+
  - Project Overview
     - Project Goals
 - User Experience
     - User Expectations
     - User Stories
-- Design Structure
+- Design
+    - Colour Scheme & Styling
+    - Structure
     - Flow chart
 - Features
     - Intro
@@ -53,6 +57,7 @@ The project also uses Google Worksheet API for:
 - Pulling data for calulation
 - Storing the calulation results
 - Providing the user with a large data set
+
 This is the [Google worksheet](https://docs.google.com/spreadsheets/d/1NckZYPLVFrlbqXG2FIFwfhZlNg0fQ67WtQURLmhWKC8/edit?usp=sharing) used to hold the data
 
 ## Project Goals
@@ -89,10 +94,10 @@ In order to imporve the UX and readibility both Pyfiglet and Colorama where impo
 
 
 ### Structure
-(images/flowchart.webp)
+#### Daily Sales Logic Flow Chart
+![Daily Sales Flow Chart](assets/images/dsflowchart.webp )
 
-Flowchart was designed at the start of the project. The final result differs from the flowchart slightly on account of implementing changes for better UX.
-
+The flowchart was designed at the start of the project to map out the logic path. The final result remained fairly close to the flowchart.
 
 [Back to top ⇧](#daily-sales)
 
@@ -120,7 +125,6 @@ Back to top ⇧
 
 Technologies Used
 Languages Used
-
 PYTHON - The project logic and operations inside CLI were developed using Python language.
 Programs Used
 GitHub - Source code hosted on GitHub, deployed using Git Pages.
