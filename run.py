@@ -1,5 +1,5 @@
 """
-Imports libraries
+Import libraries
 """
 from datetime import date
 import gspread
@@ -31,12 +31,11 @@ def get_sales():
         print("Please enter todays sales as below seperated by commas")
         print("Follow the order: Food sales, Drink sales, 0% VAT sales")
         print("For example: 1234.56, 123, 123.45 \n")
-        show_date() 
+        show_date()
 
         todays_sales = input("Please Enter Sales here: \n")
-
         sales_data = todays_sales.split(",")
-        
+        # Calls validatior and confirms correct input
         if validate_sales(sales_data):
             print(f"{Fore.GREEN}Sales data format is accepted")
             break
@@ -54,7 +53,7 @@ def validate_sales(values):
         if len(values) != 3:
             raise ValueError(
                 f"{Fore.RED}3 values seperated by a comma required. Found:{len(values)}"
-            )
+            )  # Line above left over 80 characters for readability
     except ValueError as error:
         print(f"{Fore.RED}Invalid Data: {error}, please try again")
         return False
@@ -115,9 +114,8 @@ def get_costs():
         print("For example: 1234.56, 1234.56 \n")
 
         todays_costs = input("Please Enter Food Cost & Labour Cost here: \n")
-
         costs_data = todays_costs.split(",")
-
+        # Calls Validator and confirms format
         if validate_costs(costs_data):
             print("Costs data format is accepted")
             break
@@ -135,7 +133,7 @@ def validate_costs(values):
         if len(values) != 2:
             raise ValueError(
                f"{Fore.RED} 2 values seperated by a comma required. Found:{len(values)}"
-            )
+            )  # Line above left over 80 characters for readability
     except ValueError as error:
         print(f"{Fore.RED} Invalid Data: {error}, please try again")
         return False
@@ -207,6 +205,17 @@ def labour_analysis():
     return labour
 
 
+def add_results_date():
+    """
+    Adds date to worksheet
+    """
+    now = str(date.today())
+    result_worksheet = SHEET.worksheet('results')
+    column = 6
+    last_row = len(result_worksheet.get_all_values())
+    result_worksheet.update_cell(last_row, column, now)
+
+
 def update_results_sheet(data):
     """
     Updates the results worksheet adding new data
@@ -239,6 +248,7 @@ def main():
     labour_cost = labour_analysis()
     analysis = sales_analysis(total_sales, total_costs) + [labour_cost]
     update_results_sheet(analysis)
+    add_results_date()
 
 
 logo = pyfiglet.figlet_format("Daily   Sales")
