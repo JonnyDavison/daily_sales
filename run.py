@@ -33,7 +33,8 @@ def get_sales():
         print("For example: 1234.56, 123, 123.45 \n")
         show_date()
 
-        todays_sales = input("Please Enter Sales here: \n")
+        todays_sales = input("Please Enter Sales here \
+            Food sales, Drink sales, 0% VAT sales: \n")
         sales_data = todays_sales.split(",")
         # Calls validatior and confirms correct input
         if validate_sales(sales_data):
