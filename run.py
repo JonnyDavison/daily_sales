@@ -186,7 +186,7 @@ def sales_analysis(num1, num2):
     gross_margin = round((100-((num2 / num1) * 100)), 2)
     print(f"{Fore.YELLOW}Gross Margin%: {gross_margin}%")
     # Calulates Cash Margin
-    cash_margin = num1 - num2
+    cash_margin = round((num1 - num2), 2)
     print(f"{Fore.YELLOW}Cash Margin: €{cash_margin} \n")
     # Prints totals
     print(f"{Fore.YELLOW}Total Costs: €{num2} \nTotal Sales: €{num1} ")
