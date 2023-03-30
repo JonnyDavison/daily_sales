@@ -201,14 +201,16 @@ As the project was built there were many bugs during the development process, ma
 
 ## Credits
 ### Code used and adapted
-- Using Google worksheet to store data, the starting point of this was taken from Code Institute [Love Sandwiches project.](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) 
-- Code Institute Python Essentials template was provided for use and is available [here](https://github.com/Code-Institute-Org/python-essentials-template).
+- [Love Sandwiches project.](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) Using Google worksheet to store data, the starting point of this was taken from Code Institute 
+- [Code Institute Python Essentials template](https://github.com/Code-Institute-Org/python-essentials-template) was provided to start the project.
 
 ### Websites visited to gather information
 There were many sites visited during the duration of the project. 
-- Google 
-- Stack Overflow
-- W3Schools
+- [Google](https://google.com/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [W3Schools](https://www.w3schools.com/python/default.asp)
+- [PEP8](https://peps.python.org/pep-0008/)
+- [Code Institute LMS](https://learn.codeinstitute.net/)
 
 
 
