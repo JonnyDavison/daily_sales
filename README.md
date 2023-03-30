@@ -81,6 +81,12 @@ This is the [Google worksheet](https://docs.google.com/spreadsheets/d/1NckZYPLVF
 [Back to top ⇧](#daily-sales)
 
 ## Design
+### Colour Scheme & Styling
+In order to imporve the UX and readibility both Pyfiglet and Colorama where imported. Pyfiglet allows large text to be displayed for the 'logo'. Colorama provides text colour highlighting essential information for the user. the colours used are inline with usual expectioans
+- Red for an input error
+- Green for accepted values
+- Yellow to highlight the results the user returned.
+
 
 ### Structure
 (images/flowchart.webp)

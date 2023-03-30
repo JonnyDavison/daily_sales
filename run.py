@@ -6,7 +6,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pyfiglet
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore
 colorama.init(autoreset=True)
 
 
@@ -248,4 +248,4 @@ print("Aiming to provide you with all your financial reporting needs")
 main()
 end = pyfiglet.figlet_format("Thank   you")
 print(end)
-print("for using Daily Sales")
+print("from the Daily Sales team")
